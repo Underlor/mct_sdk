@@ -1,10 +1,10 @@
 # MCT Python SDK 
 https://mc-t.ru/api_info/ - документация
 
-###Установка:
+### Установка:
 pip install mct-sdk
 
-###Примеры использования:
+### Примеры использования:
 ```pythonstub
 from mct_sdk.client import MctClient
 
