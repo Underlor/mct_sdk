@@ -34,3 +34,11 @@ class MctClient:
         :return:
         """
         return self.send_post('getVotes', {'days': days, }).json()
+
+    def send_vote_status(self, session_id: str) -> dict:
+        """
+        Метод получает количество голосов вашего проекта за промежуток времени
+
+        :return:
+        """
+        return self.send_post('sendVoteStatus', {'session_id': session_id, }).json()
