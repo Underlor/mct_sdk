@@ -5,6 +5,7 @@ https://mc-t.ru/api_info/ - документация
 pip install mct-sdk
 
 ### Примеры использования:
+
 ```pythonstub
 from mct_sdk.client import MctClient
 
@@ -14,3 +15,6 @@ client.get_votes(30)
 # Response example
 # {'data': {'votes': 999}, 'error': '', 'status': 'ok'}
 ```
+#### 
+
+Больше примеров работы можно найти в документации
