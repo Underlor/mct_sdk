@@ -15,7 +15,6 @@ class MctClient:
 
         :param method: наименование метода
         :param kwargs: данные для метода
-        :return:
         """
 
         data = {
@@ -31,7 +30,6 @@ class MctClient:
         Метод получает количество голосов вашего проекта за промежуток времени
 
         :param days: Временной промежуток в днях
-        :return:
         """
         return self.send_post('getVotes', {'days': days, }).json()
 
@@ -39,6 +37,17 @@ class MctClient:
         """
         Метод получает количество голосов вашего проекта за промежуток времени
 
-        :return:
         """
         return self.send_post('sendVoteStatus', {'session_id': session_id, }).json()
+
+    def echo(self, message: str) -> dict:
+        """
+        Метод метод для проверки доступности API
+        """
+        return self.send_post('getEcho', {'msg': message, }).json()
+
+    def get_all_methods(self) -> dict:
+        """
+        Получение всех методов API
+        """
+        return self.send_post('getAllMethods', {}).json()
