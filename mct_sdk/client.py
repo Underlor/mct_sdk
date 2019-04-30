@@ -1,11 +1,14 @@
 import requests
 from requests import Response
 
-base_url = 'https://mc-t.ru/api/'
-
 
 class MctClient:
-    def __init__(self, key: str):
+    def __init__(self, key: str, base_url):
+        if base_url:
+            self.base_url = base_url
+        else:
+            self.base_url = 'https://mc-t.ru/api/'
+
         self.session = requests.Session()
         self.key = key
 
@@ -23,7 +26,7 @@ class MctClient:
             'kwargs': kwargs
         }
 
-        return self.session.post(f'{base_url}', json=data)
+        return self.session.post(f'{self.base_url}', json=data)
 
     def get_votes(self, days: int = 30) -> dict:
         """
