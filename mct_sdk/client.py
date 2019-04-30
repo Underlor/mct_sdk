@@ -3,12 +3,8 @@ from requests import Response
 
 
 class MctClient:
-    def __init__(self, key: str, base_url):
-        if base_url:
-            self.base_url = base_url
-        else:
-            self.base_url = 'https://mc-t.ru/api/'
-
+    def __init__(self, key: str, base_url='https://mc-t.ru/api/'):
+        self.base_url = base_url
         self.session = requests.Session()
         self.key = key
 
