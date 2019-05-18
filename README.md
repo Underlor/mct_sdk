@@ -1,3 +1,5 @@
+# Репозиторий переехал https://github.com/mine-top/mct_python_sdk 
+
 # MCT Python SDK 
 https://mc-t.ru/api_info/ - документация
 
